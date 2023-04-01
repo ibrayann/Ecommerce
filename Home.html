@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nike || Home</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <!-- CSS-MOBILE-DESKTOP -->
+  <style>
+    .mobile {
+      display: block;
+    }
+    .desktop {
+      display: none;
+    }
+    @media (min-width: 600px) {
+      .mobile {
+        display: none;
+      }
+      .desktop {
+        display: block;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="javascript:void(0)">
+          <img src="Logo_NIKE.svg.png" alt="" width="70px" height="40px" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mynavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Hombre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Mujer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)">Sale</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2 rounded-pill"
+              type="text"
+              placeholder="Search"
+            />
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carrusel -->
+    <div
+      id="carouselExampleControls"
+      class="carousel slide bg-dark"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active text-center">
+          <p class="text-light my-0 py-4">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet,
+            ipsa?
+          </p>
+        </div>
+        <div class="carousel-item text-center">
+          <p class="text-light my-0 py-4">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit
+          </p>
+        </div>
+        <div class="carousel-item text-center">
+          <p class="text-light my-0 py-4">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet,
+            ipsa
+          </p>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleControls"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Page -->
+    <div class="container-fluid px-5 bg-light">
+      <div class="row">
+        <div
+          class="col-12 bg-primary text-center py-5 mt-5 d-flex justify-content-center flex-column align-items-center"
+        >
+          <img src="Logo_NIKE.svg.png" alt="" width="70px" height="40px" />
+          <h1 class="fw-bold text-light mx-auto">TEMPORADA DE OFERTAS</h1>
+          <p class="fw-bold text-light">3x2 en productos seleccionados</p>
+          <a href="" class="btn btn-light rounded-pill py-2 px-4 mt-3"
+            >Comprar</a
+          >
+        </div>
+        <div class="col-12 p-0">
+          <img
+            class="w-100 my-5 desktop img-fluid"
+            src="AirForce_ToutPrincipal_Desktop_29-03-2023 (1).png"
+            alt=""
+          />
+          <img
+            class="w-100 my-5 mobile"
+            src="AirForce_ToutPrincipal_Mobile_29-03-2023.png"
+            alt=""
+          />
+        </div>
+        <div class="col-12 d-flex align-items-center flex-column">
+          <h2 class="text-center fw-bold display-3">CLÁSICOS PARA TODOS</h2>
+          <p class="fw-bold">Revoluciona tu estilo con Air Force 1</p>
+          <a href="" class="btn btn-outline-primary rounded-pill py-2 px-4 mt-3"
+            >Comprar</a
+          >
+        </div>
+
+        <div class="col-12 my-5">
+          <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-2 mb-2">
+              <div class="card">
+                <img src="DD1391_100_A.webp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Jordan 1</h5>
+                  <a href="" class="btn btn-dark rounded-pill py-2 px-4 mt-3"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-2 mb-2">
+              <div class="card">
+                <img src="DD1391_100_A.webp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Jordan 1</h5>
+                  <a href="" class="btn btn-dark rounded-pill py-2 px-4 mt-3"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-2 mb-2">
+              <div class="card">
+                <img src="DD1391_100_A.webp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Jordan 1</h5>
+                  <a href="" class="btn btn-dark rounded-pill py-2 px-4 mt-3"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-2 mb-2">
+              <div class="card">
+                <img src="DD1391_100_A.webp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Jordan 1</h5>
+                  <a href="" class="btn btn-dark rounded-pill py-2 px-4 mt-3"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-2 mb-2">
+              <div class="card">
+                <img src="DD1391_100_A.webp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Jordan 1</h5>
+                  <a href="" class="btn btn-dark rounded-pill py-2 px-4 mt-3"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-2 mb-2">
+              <div class="card">
+                <img src="DD1391_100_A.webp" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Jordan 1</h5>
+                  <a href="" class="btn btn-dark rounded-pill py-2 px-4 mt-3"
+                    >Comprar</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card">
+            <img
+              src="ZapasparaEl_HSec_Desktop__20-03-2023.png"
+              class="card-img img-fluid"
+              alt="..."
+              style="min-height: 400px"
+            />
+            <div
+              class="card-img-overlay d-flex flex-column justify-content-end align-items-start"
+            >
+              <h5 class="card-title text-white">Estilos para él</h5>
+              <a href="" class="btn btn-dark rounded-pill py-2 px-4 mt-1"
+                >Comprar</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
