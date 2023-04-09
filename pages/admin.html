@@ -13,12 +13,18 @@
     <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
       <div class="container-fluid">
         <a class="navbar-brand" href="../Home.html">
-          <img
-            src="../imgs/Logo_NIKE.svg.png"
-            alt=""
-            width="80px"
-            height="40px"
-          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-stripe"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm6.226 5.385c-.584 0-.937.164-.937.593 0 .468.607.674 1.36.93 1.228.415 2.844.963 2.851 2.993C11.5 11.868 9.924 13 7.63 13a7.662 7.662 0 0 1-3.009-.626V9.758c.926.506 2.095.88 3.01.88.617 0 1.058-.165 1.058-.671 0-.518-.658-.755-1.453-1.041C6.026 8.49 4.5 7.94 4.5 6.11 4.5 4.165 5.988 3 8.226 3a7.29 7.29 0 0 1 2.734.505v2.583c-.838-.45-1.896-.703-2.734-.703Z"
+            />
+          </svg>
         </a>
 
         <button
@@ -40,6 +46,9 @@
             <li class="nav-item">
               <a class="nav-link" href="javascript:void(0)">Sale</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/listado-productos.html">Admin</a>
+            </li>
           </ul>
           <form class="d-flex">
             <input
@@ -48,6 +57,20 @@
               placeholder="Search"
             />
           </form>
+          <a href="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="dark"
+              class="bi bi-cart-check-fill mx-2"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"
+              />
+            </svg>
+          </a>
           <a href="">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -71,21 +94,28 @@
         <div class="col-sm-12 col-md-2">
           <div class="card mb-2">
             <ul class="list-group list-group-flush">
-              <a href="listado-productos.html" class="list-group-item">Todos los productos</a>
-              <a href="admin.html" class="list-group-item">Agregar un nuevo producto</a>
-
+              <a href="listado-productos.html" class="list-group-item"
+                >Todos los productos</a
+              >
+              <a href="admin.html" class="list-group-item"
+                >Agregar un nuevo producto</a
+              >
             </ul>
           </div>
           <div class="card mb-2">
             <ul class="list-group list-group-flush">
-              <a class="list-group-item">Ver Ordenes</a>
-              <a class="list-group-item">Devoluciones</a>
+              <a href="ordenes.html" class="list-group-item">Ver Ordenes</a>
+              <a href="devoluciones.html" class="list-group-item"
+                >Devoluciones</a
+              >
             </ul>
           </div>
         </div>
         <div class="col-sm-12 col-md-10">
           <section class="card p-5">
-            <h4 class="card-tittle mb-2 fw-bold  text-success">Registra un nuevo producto</h4>
+            <h4 class="card-tittle mb-2 fw-bold text-success">
+              Registra un nuevo producto
+            </h4>
             <div class="card-body">
               <form action="">
                 <div class="mb-3">
@@ -146,7 +176,9 @@
                   <button type="cancel" class="btn btn-outline-dark mb-2">
                     Cancel
                   </button>
-                  <button type="submit" class="btn btn-dark mb-2">Submit</button>
+                  <button type="submit" class="btn btn-dark mb-2">
+                    Submit
+                  </button>
                 </div>
               </form>
             </div>
