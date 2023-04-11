@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <title>Administrador</title>
+    <title>Carro</title>
   </head>
-
-  <body class="bg-light">
+  <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
       <div class="container-fluid">
         <a class="navbar-brand" href="../Home.html">
@@ -89,181 +88,81 @@
       </div>
     </nav>
 
-    <div class="container-fluid px-5 bg-light my-5 " style="min-height: 100vh;">
+    <div class="container-fluid px-5 bg-light my-5 vh-100">
       <div class="row">
-        <div class="col-sm-12 col-md-2">
-          <div class="card mb-2">
-            <ul class="list-group list-group-flush">
-              <a href="listado-productos.html" class="list-group-item"
-                >Todos los productos</a
-              >
-              <a href="admin.html" class="list-group-item"
-                >Agregar un nuevo producto</a
-              >
-            </ul>
-          </div>
-          <div class="card mb-2">
-            <ul class="list-group list-group-flush">
-              <a href="ordenes.html" class="list-group-item">Ver Ordenes</a>
-              <a href="devoluciones.html" class="list-group-item"
-                >Devoluciones</a
-              >
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-10">
-          <section class="card p-5">
-            <h4 class="card-tittle mb-4 fw-bold text-success">Ordens</h4>
-            <input
-              type="text"
-              class="form-control my-2 rounded-pill"
-              placeholder="Busca acá"
-            />
-            <div class="table-responsive">
+        <div class="col-lg-8 col-md-6 col-sm-12">
+          <div class="card">
+            <section class="card-body">
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Cliente</th>
                     <th scope="col">Producto</th>
-                    <th scope="col">Fecha de compra</th>
-                    <th scope="col">Dirección</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Subtotal</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Brayan Gatica</td>
-                    <td>Dunk</td>
-                    <td>08-03-2022</td>
-                    <td>3 Sur 0288, Parral , Maule</td>
                     <td>
-                      <div
-                        class="d-flex gap-2 align-items-center mb-0 text-success"
-                      >
-                        <span
-                          class="rounded-circle d-block bg-success"
-                          style="width: 7px; height: 7px"
-                        ></span>
-                        Entregado
+                      <div class="d-flex align-items-center gap-2">
+                        <img
+                          src="../imgs/DD1391_100_A.webp"
+                          alt=""
+                          width="80px"
+                          height="80px"
+                        />
+                        <p class="m-0">Dunk Nike</p>
                       </div>
                     </td>
+                    <td class="align-middle">$100.000</td>
+                    <td class="align-middle">3</td>
+                    <td class="align-middle">300.000</td>
                   </tr>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Brayan Gatica</td>
-                    <td>Dunk</td>
-                    <td>08-03-2022</td>
-                    <td>3 Sur 0288, Parral , Maule</td>
                     <td>
-                      <div
-                        class="d-flex gap-2 align-items-center mb-0 text-success"
-                      >
-                        <span
-                          class="rounded-circle d-block bg-success"
-                          style="width: 7px; height: 7px"
-                        ></span>
-                        Entregado
+                      <div class="d-flex align-items-center gap-2">
+                        <img
+                          src="../imgs/DD1391_100_A.webp"
+                          alt=""
+                          width="80px"
+                          height="80px"
+                        />
+                        <p class="m-0">Dunk Nike</p>
                       </div>
                     </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brayan Gatica</td>
-                    <td>Dunk</td>
-                    <td>08-03-2022</td>
-                    <td>3 Sur 0288, Parral , Maule</td>
-                    <td>
-                      <div
-                        class="d-flex gap-2 align-items-center mb-0 text-success"
-                      >
-                        <span
-                          class="rounded-circle d-block bg-success"
-                          style="width: 7px; height: 7px"
-                        ></span>
-                        Entregado
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brayan Gatica</td>
-                    <td>Dunk</td>
-                    <td>08-03-2022</td>
-                    <td>3 Sur 0288, Parral , Maule</td>
-                    <td>
-                      <div
-                        class="d-flex gap-2 align-items-center mb-0 text-success"
-                      >
-                        <span
-                          class="rounded-circle d-block bg-success"
-                          style="width: 7px; height: 7px"
-                        ></span>
-                        Entregado
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brayan Gatica</td>
-                    <td>Dunk</td>
-                    <td>08-03-2022</td>
-                    <td>3 Sur 0288, Parral , Maule</td>
-                    <td>
-                      <div
-                        class="d-flex gap-2 align-items-center mb-0 text-success"
-                      >
-                        <span
-                          class="rounded-circle d-block bg-success"
-                          style="width: 7px; height: 7px"
-                        ></span>
-                        Entregado
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Brayan Gatica</td>
-                    <td>Dunk</td>
-                    <td>08-03-2022</td>
-                    <td>3 Sur 0288, Parral , Maule</td>
-                    <td>
-                      <div
-                        class="d-flex gap-2 align-items-center mb-0 text-warning"
-                      >
-                        <span
-                          class="rounded-circle d-block bg-warning"
-                          style="width: 7px; height: 7px"
-                        ></span>
-                        Pendiente
-                      </div>
-                    </td>
+                    <td class="align-middle">$100.000</td>
+                    <td class="align-middle">3</td>
+                    <td class="align-middle">300.000</td>
                   </tr>
                 </tbody>
               </table>
-              <nav aria-label="Page navigation example text-end">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link text-dark" href="#">Previous</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link text-dark" href="#">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link text-dark" href="#">2</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link text-dark" href="#">3</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link text-dark" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
+            </section>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <h4 class="text-center border-bottom pb-3 text-white">
+                Resumen compra
+              </h4>
+              <div class="d-flex justify-content-between text-white px-2">
+                <small>Subtotal</small>
+                <strong>$300.000</strong>
+              </div>
+              <div class="d-flex justify-content-between text-white px-2">
+                <small>Envio</small>
+                <strong>$0</strong>
+              </div>
+              <div class="d-flex justify-content-between text-white px-2">
+                <p class="fw-bold">Total</p>
+                <strong>$300.000</strong>
+              </div>
+              <a href="" class="my-3 btn btn-dark btn-outline-light d-block">Ingresa a tu cuenta</a>
+              <a href="" class="my-3 btn btn-light d-block">Seguir comprando</a>
+              <a href="" class="my-3 text-center d-block">Continuar como invitado</a>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -423,11 +322,6 @@
             sequi voluptate quas.
           </p>
         </section>
-        <!-- Section: Text -->
-
-        <!-- Section: Links -->
-
-        <!-- Section: Links -->
       </div>
       <!-- Grid container -->
 
@@ -439,6 +333,5 @@
       </div>
       <!-- Copyright -->
     </footer>
-    <!-- Footer -->
   </body>
 </html>
