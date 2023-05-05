@@ -97,18 +97,18 @@
     >
       <div class="carousel-inner">
         <div class="carousel-item active text-center">
-          <p class="text-light my-0 py-4">
+          <p class="text-light my-0 py-4" id="dolar">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet,
             ipsa?
           </p>
         </div>
         <div class="carousel-item text-center">
-          <p class="text-light my-0 py-4">
+          <p class="text-light my-0 py-4" id="euro">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit
           </p>
         </div>
         <div class="carousel-item text-center">
-          <p class="text-light my-0 py-4">
+          <p class="text-light my-0 py-4" id="bitcoin">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet,
             ipsa
           </p>
@@ -370,6 +370,22 @@
         </div>
       </div>
     </div>
+
+    <!-- aca va el consumo de api de dolar en JS-->
+
+    <script>
+          fetch('https://mindicador.cl/api').then(function(response) {
+        return response.json();
+    }).then(function(dailyIndicators) {
+        document.getElementById("bitcoin").innerHTML = 'El valor actual del Bitcoin es $' + dailyIndicators.bitcoin.valor;
+        document.getElementById("dolar").innerHTML = 'El valor actual del Dólar observado es $' + dailyIndicators.dolar.valor;
+        document.getElementById("euro").innerHTML = 'El valor actual del Euro es $' + dailyIndicators.euro.valor;
+    }).catch(function(error) {
+        console.log('Requestfailed', error);
+    });
+    </script>
+
+
     <!-- Footer -->
     <footer class="bg-dark text-center text-white mt-4">
       <!-- Grid container -->
