@@ -35,72 +35,193 @@
             class="mx-auto d-block"
             alt=""
           />
-          <form action="">
+          <form id="productEdit">
             <div class="row mt-5">
               <div class="col-md-6 col-sm-12">
-                <label for="exampleFormControlInput1" class="form-label"
+                <label for="nombreProduct" class="form-label"
                   >Nombre producto</label
                 >
                 <input
                   type="text"
                   class="form-control"
-                  id="exampleFormControlInput1"
+                  id="nombreProduct"
                   value="Dunk"
+                  name="nombreProduct"
                 />
+                <p class="text-danger mb-2 d-none" id="alertNombre"></p>
               </div>
               <div class="col-md-6 col-sm-12">
-                <label for="exampleFormControlInput2" class="form-label"
+                <label for="marcaProduct" class="form-label"
                   >Marca producto</label
                 >
                 <input
                   type="text"
                   class="form-control"
-                  id="exampleFormControlInput2"
+                  id="marcaProduct"
                   value="Nike"
+                  name="marcaProduct"
                 />
+                <p class="text-danger mb-2 d-none" id="alertMarca"></p>
               </div>
               <div class="col-md-6 col-sm-12 mt-2">
-                <label for="exampleFormControlInput3" class="form-label"
-                  >Precio</label
-                >
+                <label for="precioProduct" class="form-label">Precio</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="exampleFormControlInput3"
+                  id="precioProduct"
                   value="100000"
+                  name="precioProduct"
                 />
+                <p class="text-danger mb-2 d-none" id="alertPrecio"></p>
               </div>
               <div class="col-12 mt-2">
-                <label for="exampleFormControlTextarea1" class="form-label"
+                <label for="descripProduct" class="form-label"
                   >Descripcion producto</label
                 >
                 <textarea
                   class="form-control"
-                  id="exampleFormControlTextarea1"
+                  id="descripProduct"
                   rows="3"
+                  name="descripProduct"
                 >
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, ducimus.
             
             </textarea
                 >
+                <p class="text-danger mb-2 d-none" id="alertDescripcion"></p>
               </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger">
+                Delete product
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-dark"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-dark">Save changes</button>
             </div>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger">Delete product</button>
-          <button
-            type="button"
-            class="btn btn-outline-dark"
-            data-bs-dismiss="modal"
-          >
-            Cancel
-          </button>
-          <button type="button" class="btn btn-dark">Save changes</button>
-        </div>
+
+        <div
+          class="alert alert-success mt-2 d-none w-75 mx-auto"
+          id="alertSuccess"
+        ></div>
       </div>
     </div>
   </div>
+
+  <script>
+    const formulario = document.getElementById("productEdit");
+
+    const nombreProduct = document.getElementById("nombreProduct");
+    const precioProduct = document.getElementById("precioProduct");
+    const marcaProduct = document.getElementById("marcaProduct");
+    const descripProduct = document.getElementById("descripProduct");
+
+    const alertSuccess = document.getElementById("alertSuccess");
+    const alertNombre = document.getElementById("alertNombre");
+    const alertPrecio = document.getElementById("alertPrecio");
+    const alertMarca = document.getElementById("alertMarca");
+    const alertDescripcion = document.getElementById("alertDescripcion");
+
+    const regUserName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    const regUserEmail =
+      /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
+
+    const pintarMensajeExito = () => {
+      alertSuccess.classList.remove("d-none");
+      alertSuccess.textContent = "Mensaje enviado con éxito";
+    };
+
+    const pintarMensajeError = (errores) => {
+      errores.forEach((item) => {
+        item.tipo.classList.remove("d-none");
+        item.tipo.textContent = item.msg;
+      });
+    };
+
+    formulario.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      alertSuccess.classList.add("d-none");
+      const errores = [];
+
+      if (
+        !regUserName.test(nombreProduct.value) ||
+        !nombreProduct.value.trim() ||
+        nombreProduct.value.length < 3
+      ) {
+        nombreProduct.classList.add("is-invalid");
+
+        errores.push({
+          tipo: alertNombre,
+          msg: "Formato no válido campo nombre, solo letras y minimo 3 caracteres",
+        });
+      } else {
+        nombreProduct.classList.remove("is-invalid");
+        nombreProduct.classList.add("is-valid");
+        alertNombre.classList.add("d-none");
+      }
+
+      if (!precioProduct.value.trim() || precioProduct.value.length < 3) {
+        precioProduct.classList.add("is-invalid");
+
+        errores.push({
+          tipo: alertPrecio,
+          msg: "Valor debe ser mayor a 1000",
+        });
+      } else {
+        precioProduct.classList.remove("is-invalid");
+        precioProduct.classList.add("is-valid");
+        alertPrecio.classList.add("d-none");
+      }
+      if (
+        !regUserName.test(marcaProduct.value) ||
+        !marcaProduct.value.trim() ||
+        marcaProduct.value.length < 3
+      ) {
+        marca.classList.add("is-invalid");
+
+        errores.push({
+          tipo: alertMarca,
+          msg: "Formato no válido campo nombre, solo letras y minimo 3 caracteres",
+        });
+      } else {
+        marcaProduct.classList.remove("is-invalid");
+        marcaProduct.classList.add("is-valid");
+        alertMarca.classList.add("d-none");
+      }
+
+      if (!descripProduct.value.trim() || descripProduct.value.length < 20) {
+        descripProduct.classList.add("is-invalid");
+
+        errores.push({
+          tipo: alertDescripcion,
+          msg: "Formato no válido campo nombre, solo letras y minimo 20 caracteres",
+        });
+      } else {
+        descripProduct.classList.remove("is-invalid");
+        descripProduct.classList.add("is-valid");
+        alertDescripcion.classList.add("d-none");
+      }
+
+      if (errores.length !== 0) {
+        pintarMensajeError(errores);
+        return;
+      }
+      console.log(nombreProduct.value);
+      console.log(marcaProduct.value);
+      console.log(precioProduct.value);
+      console.log(descripProduct.value);
+      console.log("Producto editado con exito");
+      pintarMensajeExito();
+    });
+  </script>
 
   <body class="bg-light">
     <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">

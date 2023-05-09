@@ -117,60 +117,57 @@
               Registra un nuevo producto
             </h4>
             <div class="card-body">
-              <form action="">
+              <form action="" id="registroProducto">
                 <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"
-                    >Nombre producto</label
-                  >
+                  <label for="nombre" class="form-label">Nombre producto</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="exampleFormControlInput1"
+                    id="nombre"
                     placeholder="Nombre producto"
+                    name="nombre"
                   />
+                  <p class="text-danger mb-2 d-none" id="alertNombre"></p>
                 </div>
+
                 <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"
-                    >Precio</label
-                  >
+                  <label for="precio" class="form-label">Precio</label>
                   <input
                     type="number"
-                    min="1"
+                    min="1000"
                     class="form-control"
-                    id="exampleFormControlInput2"
+                    id="precio"
                     placeholder="Precio producto"
+                    name="precio"
                   />
+                  <p class="text-danger mb-2 d-none" id="alertPrecio"></p>
                 </div>
                 <div class="mb-3">
-                  <label for="exampleFormControlInput4" class="form-label"
-                    >Marca</label
-                  >
+                  <label for="marca" class="form-label">Marca</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="exampleFormControlInput4"
+                    id="marca"
                     placeholder="Marca"
+                    name="marca"
                   />
+                  <p class="text-danger mb-2 d-none" id="alertMarca"></p>
                 </div>
                 <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label"
+                  <label for="descripcion" class="form-label"
                     >Descripcion producto</label
                   >
                   <textarea
                     class="form-control"
-                    id="exampleFormControlTextarea1"
+                    id="descripcion"
                     rows="3"
+                    name="descripcion"
                   ></textarea>
+                  <p class="text-danger mb-2 d-none" id="alertDescripcion"></p>
                 </div>
                 <div class="mb-3">
-                  <label for="exampleFormControlTextarea3" class="form-label"
-                    >Imagen producto</label
-                  >
-                  <input
-                    type="file"
-                    class="form-control"
-                    id="exampleFormControlTextarea3"
-                  />
+                  <label for="imagen" class="form-label">Imagen producto</label>
+                  <input type="file" class="form-control" id="imagen" />
                 </div>
                 <div class="text-end">
                   <button type="cancel" class="btn btn-outline-dark mb-2">
@@ -181,6 +178,10 @@
                   </button>
                 </div>
               </form>
+              <div
+                class="alert alert-success mt-2 d-none w-75 mx-auto"
+                id="alertSuccess"
+              ></div>
             </div>
           </section>
         </div>
@@ -359,5 +360,6 @@
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
+    <script src="../Scripts/ValidRegisterProduct.js"></script>
   </body>
 </html>

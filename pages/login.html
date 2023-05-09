@@ -6,52 +6,54 @@
     <title>Nike Chile | Iniciar Sesión</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/jquery-3.6.0.min.js"></script>
   </head>
 
   <body class="bg-light">
     <div class="container-fluid">
-      <div class="row my-auto  vh-100">
+      <div class="row my-auto vh-100">
         <div class="col-md-8 col-sm-10 mx-auto my-auto">
           <div class="card">
             <div class="row">
               <div class="col-md-6 col-sm-12">
-                <h1 class="fw-bold text-center mt-5">Iniciar Sesion
-                </h1>
-                <div
-                  class="d-flex align-items-center p-4"
-                >
-                  <form style="width: 100%">
+                <h1 class="fw-bold text-center mt-5">Iniciar Sesion</h1>
+                <div class="align-items-center p-4">
+                  <form
+                    style="width: 100%"
+                    id="miFormulario"
+                    action="#"
+                    method="post"
+                  >
                     <div class="form-outline mb-4">
                       <input
                         type="email"
-                        id="form2Example18"
-                        class="form-control form-control-lg "
+                        id="email"
+                        name="email"
+                        class="form-control"
                       />
-                      <label class="form-label mt-2" for="form2Example18"
-                        >Email</label
-                      >
+                      <label class="form-label mt-2" for="email">Email</label>
                     </div>
 
-                    <div class="form-outline mb-4">
-                      <input
-                        type="password"
-                        id="form2Example28"
-                        class="form-control form-control-lg"
-                      />
-                      <label class="form-label mt-2" for="form2Example28"
-                        >Contraseña</label
-                      >
-                    </div>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      class="form-control"
+                    />
+                    <label class="form-label mt-2" for="password"
+                      >Contraseña</label
+                    >
 
                     <div class="pt-1 mb-4">
-                      <a
-                        href="admin.html"
-                        class="btn btn-dark btn-lg"
-                      >
-                        Iniciar Sesión
-                    </a>
+                      <input
+                        class="btn btn-dark"
+                        type="submit"
+                        value="Enviar"
+                        id="enviar"
+                      />
                     </div>
 
+                    <p id="mensaje-error" class="d-block text-warning"></p>
                     <p class="small mb-5 pb-lg-2">
                       <a class="text-muted" href="#!"
                         >¿Has olvidado tu contraseña?</a
@@ -59,16 +61,46 @@
                     </p>
                     <p>
                       No tienes cuenta?
-                      <a href="registro.html" class="link-info">Registrate Aquí</a>
+                      <a href="registro.html" class="link-info"
+                        >Registrate Aquí</a
+                      >
                     </p>
                   </form>
+
+                  <script>
+                    var expr = /^[a-zA-Z0-9_.]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
+                    $(document).ready(function () {
+                      $("#enviar").click(function (e) {
+                        e.preventDefault();
+                        var email = $("#email").val();
+                        var password = $("#password").val();
+
+                        if (password.length <= 2) {
+                          $("#mensaje-error").text(
+                            "Por favor, complete una password válida."
+                          );
+                          return;
+                        }
+                        if (email == "" || !expr.test(email)) {
+                          $("#mensaje-error").text(
+                            "Por favor, Ingrese un email válido."
+                          );
+                        } else {
+                          return window.location.replace("admin.html");
+                        }
+
+                        console.log("Email:", email);
+                        console.log("Contraseña:", password);
+                      });
+                    });
+                  </script>
                 </div>
               </div>
               <div class="col-md-6 d-none d-sm-block">
                 <img
                   src="../imgs/AirForce_ToutPrincipal_Mobile_29-03-2023.png"
                   alt="Login-image"
-                  class=" img-fluid h-100"
+                  class="img-fluid h-100"
                 />
               </div>
             </div>
@@ -76,7 +108,5 @@
         </div>
       </div>
     </div>
-    <!-- Login Form -->
   </body>
 </html>
-

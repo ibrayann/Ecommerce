@@ -15,70 +15,94 @@
           <div class="card">
             <div class="row">
               <div class="col-md-6 col-sm-12">
+                <a
+                  href="../Home.html"
+                  class="text-center btn btn-dark mt-3 mx-3"
+                  >Ir al inicio</a
+                >
                 <h1 class="fw-bold text-center my-5">Registrate</h1>
-                <div class="d-flex justify-content-center ">
-                  <form>
-                    <div class="form-group mb-3">
-                      <label for="nombre">Nombre:</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="nombre"
-                        required
-                      />
-                    </div>
-                    <div class="form-group mb-3">
-                      <label for="apellido">Apellido:</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="apellido"
-                        required
-                      />
-                    </div>
-                    <div class="form-group mb-3">
-                      <label for="email">Correo electrónico:</label>
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        required
-                      />
-                    </div>
-                    <div class="form-group mb-3">
-                      <label for="ciudad">Ciudad:</label>
-                      <select class="form-control" id="ciudad" required>
-                        <option value="">Selecciona una ciudad</option>
-                        <option value="parral">Parral</option>
-                        <option value="concepcion">Concepción</option>
-                        <option value="quirihue">Quirihue</option>
-                      </select>
-                    </div>
-                    <div class="form-group mb-3">
-                      <label for="password">Contraseña:</label>
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="password"
-                        required
-                      />
-                    </div>
-                    <div class="form-check mb-3">
-                      <input
-                        type="checkbox"
-                        class="form-check-input"
-                        id="terminos"
-                        required
-                      />
-                      <label class="form-check-label" for="terminos"
-                        >Acepto los términos y condiciones</label
-                      >
-                    </div>
-                    <a href="../Home.html" class="btn btn-dark">
-                      Registrarse
-                    </a>
+                <div class="d-flex justify-content-center">
+                  <form id="formulario" class="w-100 px-5">
+                    <label class="mb-2" for="userName"
+                      >Nombre (minimo 3 caracteres)</label
+                    >
+                    <input
+                      class="form-control mb-2"
+                      name="userName"
+                      placeholder="Ingrese su nombre"
+                      autocomplete="off"
+                      id="userName"
+                      type="text"
+                      value="ignacio"
+                    />
+
+                    <p class="text-danger mb-2 d-none" id="alertName"></p>
+
+                    <label class="mb-2" for="userLastName"
+                      >Apellido (minimo 3 caracteres)</label
+                    >
+                    <input
+                      class="form-control mb-2"
+                      name="userLastName"
+                      placeholder="Ingrese su Apellido"
+                      autocomplete="off"
+                      id="userLastName"
+                      type="text"
+                      value="Gatica"
+                    />
+
+                    <p class="text-danger mb-2 d-none" id="alertLastName"></p>
+
+                    <label class="mb-2" for="userEmail">Email</label>
+                    <input
+                      class="form-control mb-2"
+                      name="userEmail"
+                      placeholder="Ingrese su correo"
+                      id="userEmail"
+                      autocomplete="off"
+                      type="email"
+                      value="ignacio@megusta.com"
+                    />
+
+                    <p class="text-danger mb-2 d-none" id="alertEmail"></p>
+
+                    <label class="mb-2" for="userDireccion"
+                      >Direccion (minimo 10 caracteres)</label
+                    >
+                    <input
+                      class="form-control mb-2"
+                      name="userDireccion"
+                      placeholder="Ingrese su Direccion"
+                      autocomplete="off"
+                      id="userDireccion"
+                      type="text"
+                      value="Paicaví 3280, Concepción, Bío Bío"
+                    />
+
+                    <p class="text-danger mb-2 d-none" id="alertDireccion"></p>
+
+                    <label class="mb-2" for="userPassword"
+                      >Contraseña (minimo 10 caracteres)</label
+                    >
+                    <input
+                      class="form-control mb-2"
+                      name="userPassword"
+                      placeholder="Ingrese su contraseña"
+                      autocomplete="off"
+                      id="userPassword"
+                      type="password"
+                      value=""
+                    />
+
+                    <p class="text-danger mb-2 d-none" id="alertPassword"></p>
+
+                    <button class="btn btn-dark" type="submit">Enviar</button>
                   </form>
                 </div>
+                <div
+                  class="alert alert-success mt-2 d-none w-75 mx-auto"
+                  id="alertSuccess"
+                ></div>
               </div>
               <div class="col-md-6 d-none d-sm-block">
                 <img
@@ -92,6 +116,7 @@
         </div>
       </div>
     </div>
+    <script src="../Scripts/ValidRegister.js"></script>
     <!-- Login Form -->
   </body>
 </html>
