@@ -1,9 +1,9 @@
-const formulario = document.getElementById("registroProducto");
+const formulario = document.getElementById("productEdit");
 
-const nombre = document.getElementById("nombre");
-const precio = document.getElementById("precio");
-const marca = document.getElementById("marca");
-const descripcion = document.getElementById("descripcion");
+const nombreProduct = document.getElementById("nombreProduct");
+const precioProduct = document.getElementById("precioProduct");
+const marcaProduct = document.getElementById("marcaProduct");
+const descripProduct = document.getElementById("descripProduct");
 
 const alertSuccess = document.getElementById("alertSuccess");
 const alertNombre = document.getElementById("alertNombre");
@@ -17,7 +17,7 @@ const regUserEmail =
 
 const pintarMensajeExito = () => {
   alertSuccess.classList.remove("d-none");
-  alertSuccess.textContent = "Producto registrado con éxito";
+  alertSuccess.textContent = "Producto editado con éxito";
 };
 
 const pintarMensajeError = (errores) => {
@@ -33,63 +33,62 @@ formulario.addEventListener("submit", (e) => {
   alertSuccess.classList.add("d-none");
   const errores = [];
 
-  // validar nombre de usuario
   if (
-    !regUserName.test(nombre.value) ||
-    !nombre.value.trim() ||
-    nombre.value.length < 3
+    !regUserName.test(nombreProduct.value) ||
+    !nombreProduct.value.trim() ||
+    nombreProduct.value.length < 3
   ) {
-    nombre.classList.add("is-invalid");
+    nombreProduct.classList.add("is-invalid");
 
     errores.push({
       tipo: alertNombre,
       msg: "Formato no válido campo nombre, solo letras y minimo 3 caracteres",
     });
   } else {
-    nombre.classList.remove("is-invalid");
-    nombre.classList.add("is-valid");
+    nombreProduct.classList.remove("is-invalid");
+    nombreProduct.classList.add("is-valid");
     alertNombre.classList.add("d-none");
   }
 
-  if (!precio.value.trim() || precio.value.length < 3) {
-    precio.classList.add("is-invalid");
+  if (!precioProduct.value.trim() || precioProduct.value.length < 3) {
+    precioProduct.classList.add("is-invalid");
 
     errores.push({
       tipo: alertPrecio,
       msg: "Valor debe ser mayor a 1000",
     });
   } else {
-    precio.classList.remove("is-invalid");
-    precio.classList.add("is-valid");
+    precioProduct.classList.remove("is-invalid");
+    precioProduct.classList.add("is-valid");
     alertPrecio.classList.add("d-none");
   }
   if (
-    !regUserName.test(marca.value) ||
-    !marca.value.trim() ||
-    marca.value.length < 3
+    !regUserName.test(marcaProduct.value) ||
+    !marcaProduct.value.trim() ||
+    marcaProduct.value.length < 3
   ) {
-    marca.classList.add("is-invalid");
+    marcaProduct.classList.add("is-invalid");
 
     errores.push({
       tipo: alertMarca,
       msg: "Formato no válido campo nombre, solo letras y minimo 3 caracteres",
     });
   } else {
-    marca.classList.remove("is-invalid");
-    marca.classList.add("is-valid");
+    marcaProduct.classList.remove("is-invalid");
+    marcaProduct.classList.add("is-valid");
     alertMarca.classList.add("d-none");
   }
 
-  if (!descripcion.value.trim() || descripcion.value.length < 20) {
-    descripcion.classList.add("is-invalid");
+  if (!descripProduct.value.trim() || descripProduct.value.length < 20) {
+    descripProduct.classList.add("is-invalid");
 
     errores.push({
       tipo: alertDescripcion,
-      msg: "Formato no válido, solo letras y minimo 20 caracteres",
+      msg: "Formato no válido campo nombre, solo letras y minimo 20 caracteres",
     });
   } else {
-    descripcion.classList.remove("is-invalid");
-    descripcion.classList.add("is-valid");
+    descripProduct.classList.remove("is-invalid");
+    descripProduct.classList.add("is-valid");
     alertDescripcion.classList.add("d-none");
   }
 
@@ -97,10 +96,10 @@ formulario.addEventListener("submit", (e) => {
     pintarMensajeError(errores);
     return;
   }
-  console.log(nombre.value);
-  console.log(precio.value);
-  console.log(marca.value);
-  console.log(descripcion.value);
-  console.log("Producto creado con exito");
+  console.log(nombreProduct.value);
+  console.log(marcaProduct.value);
+  console.log(precioProduct.value);
+  console.log(descripProduct.value);
+  console.log("Producto editado con exito");
   pintarMensajeExito();
 });

@@ -19,7 +19,7 @@ const regUserEmail =
 
 const pintarMensajeExito = () => {
   alertSuccess.classList.remove("d-none");
-  alertSuccess.textContent = "Mensaje enviado con éxito";
+  alertSuccess.textContent = "Registrado con éxito";
 };
 
 const pintarMensajeError = (errores) => {
